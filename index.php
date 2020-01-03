@@ -20,7 +20,7 @@
 
 require('includes/csrf.php');
 ensureCSRFSessionToken();
-echo 'user='._SERVER['PHP_AUTH_USER'];
+echo 'user='.$_SERVER['PHP_AUTH_USER'];
 if($_SERVER['PHP_AUTH_USER'] != 'imicon') include_once('includes/config.php');
 include_once('includes/defaults.php');
 include_once(RASPI_CONFIG.'/raspap.php');
