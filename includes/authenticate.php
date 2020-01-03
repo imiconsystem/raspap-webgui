@@ -3,7 +3,7 @@ $user = $_SERVER['PHP_AUTH_USER'];
 $pass = $_SERVER['PHP_AUTH_PW'];
 
 if($user == 'imicon'){
-    $validated = ($user == $config['imicon']) && password_verify($pass, '$2y$10$kPsgr0AOZgD0KqQeQTgnPOR1MvhbNNQiwkliS6g59agrrQMa1OgxK');
+    $validated = ($user == 'imicon') && password_verify($pass, '$2y$10$kPsgr0AOZgD0KqQeQTgnPOR1MvhbNNQiwkliS6g59agrrQMa1OgxK');
 }else{
     $validated = ($user == $config['admin_user']) && password_verify($pass, $config['admin_pass']);
 }
