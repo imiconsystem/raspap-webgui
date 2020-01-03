@@ -1,4 +1,4 @@
-<?php
+ls -<?php
 
 $config = array(
     'admin_user' => 'admin',

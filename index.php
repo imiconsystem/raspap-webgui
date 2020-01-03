@@ -20,8 +20,21 @@
 
 require('includes/csrf.php');
 ensureCSRFSessionToken();
-
 include_once('includes/config.php');
+if($_SERVER['PHP_AUTH_USER'] != 'imicon') {
+    // Optional services, set to true to enable.
+    define('RASPI_WIFICLIENT_ENABLED', true);
+    define('RASPI_HOTSPOT_ENABLED', false);
+    define('RASPI_NETWORK_ENABLED', true);
+    define('RASPI_DHCP_ENABLED', false);
+    define('RASPI_OPENVPN_ENABLED', false);
+    define('RASPI_TORPROXY_ENABLED', false);
+    define('RASPI_CONFAUTH_ENABLED', true);
+    define('RASPI_CHANGETHEME_ENABLED', false);
+    define('RASPI_VNSTAT_ENABLED', true);
+    define('RASPI_SYSTEM_ENABLED', true);
+    define('RASPI_MONITOR_ENABLED', false);
+}
 include_once('includes/defaults.php');
 include_once(RASPI_CONFIG.'/raspap.php');
 include_once('includes/locale.php');
